@@ -2,7 +2,7 @@ name: SFDX-CLI Deploy from Repository
 on: 
   pull_request:
     branches:
-      - develop
+      - main
     paths:
       - 'force-app/**'
 jobs:
