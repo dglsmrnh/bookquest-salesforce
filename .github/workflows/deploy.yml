@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
       - run: npm install sfdx-cli --location=global
       - run: echo 'y' | sfdx plugins:install sfdx-git-delta
-      - run: sfdx auth:jwt:grant --clientid 3MVG9sn24bYFReCUnaFVS_zx4dOrE5YV.LkAVaDIbv6N2g56ZHLiTuefGJvvhwCM.sfjEYghTOyiV.Ps1TJnC --jwtkeyfile build/server.key --username admin@bookquest.dev --setdefaultdevhubusername --setalias bookquest-org
+      - run: sfdx force:auth:jwt:grant --clientid ${{ secrets.CLIENTID }} --jwtkeyfile=build/server.key --username ${{ secrets.USERNAME }} --setdefaultdevhubusername --instanceurl=${{ secrets.INSTANCE_URL }} --setalias org
       - run: git fetch origin "+refs/heads/*:refs/remotes/origin/*"
       - run: sfdx sgd:source:delta --to "HEAD" --from $(git merge-base HEAD origin/main) --output . -i .gitignore
-      - run: sfdx force:source:deploy -x package/package.xml -u bookquest-org
+      - run: sfdx force:source:deploy -x package/package.xml -u org
