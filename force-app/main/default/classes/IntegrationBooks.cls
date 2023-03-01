@@ -26,33 +26,5 @@ global with sharing class IntegrationBooks {
 
         List<Book__c> bookList = Database.query(query);
         return bookList;
-
-        // String jsonString = JSON.serialize(bookList);
-
-        // System.debug((List<Object>) JSON.deserializeUntyped(jsonString));
-        // List<Object> myObj = (List<Object>) JSON.deserializeUntyped(jsonString);
-        // Map<String,Object> o = (Map<String,Object>) myObj[0];
-        // system.debug((String) o.get('Name'));
-
-
-
-        // return new ResponseModel(myObj);
-    }
-
-    global class ResponseModel {
-        global List<Object> response;
-
-        global ResponseModel(List<Object> data){
-            this.response = data;
-        }
-    }
-
-    global class Response {
-        global List<String> response;
-
-        global Response(){
-        }
-    }
-
-    
+    }    
 }
