@@ -13,7 +13,7 @@ global with sharing class IntegrationBooks {
         String fieldsBook = String.join(IntegrationUtils.getFields('Book__c'), ', ');
 
         String fieldsCategory = String.join(
-            IntegrationUtils.addRelationshipObjectToFields(IntegrationUtils.getFields('Category__c'), 'Category__r'), 
+            IntegrationUtils.addRelationshipObjectToFields(IntegrationUtils.getFields('Product2'), 'Category__r'), 
             ','
         );
 
