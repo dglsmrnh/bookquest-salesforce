@@ -5,8 +5,8 @@ public with sharing class BookCategoryHelper {
         Set<Id> categoryIdsSet = new Set<Id>();
 
         for(BookCategory__c bookCategory : newRecordList) {
-            bookIdsSet.add(bookCategory.Book_c);
-            categoryIdsSet.add(bookCategory.Category_c);
+            bookIdsSet.add(bookCategory.Book__c);
+            categoryIdsSet.add(bookCategory.Category__c);
         }
 
         Map<Id, Book__c> bookMap = new Map<Id, Book__c>([SELECT Id, ISBN__c, ISBN10__c FROM Book__c WHERE Id IN: bookIdsSet]);
