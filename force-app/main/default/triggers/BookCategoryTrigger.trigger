@@ -1,5 +1,5 @@
 trigger BookCategoryTrigger on BookCategory__c (before insert, after insert, before update, after update, before delete, after delete) {
-    Product2Handler handler = new Product2Handler(
+    BookCategoryHandler handler = new BookCategoryHandler(
         Trigger.operationType,
         Trigger.new, 
         Trigger.old,
@@ -7,7 +7,7 @@ trigger BookCategoryTrigger on BookCategory__c (before insert, after insert, bef
         Trigger.oldMap
     );
     
-    if (Product2Handler.isTriggerEnabled()) {
+    if (BookCategoryHandler.isTriggerEnabled()) {
         handler.execute();
     }
 }
