@@ -5,13 +5,13 @@ public with sharing class AccountHelper {
         
         for(Account acc : newRecords) {
             Contract contr = new Contract();
-            contr.Status = 'Activated';
+            contr.Status = 'Draft';
             contr.AccountId = acc.Id;
             contr.Description = String.valueOf(Label.AccountContract).replace('<Name>',acc.Name);
             
             Id recordTypeId = ContractHelper.getRecordTypeId('Free');
 
-            if(!String.isNotEmpty(acc.Type)) {
+            if(String.isNotEmpty(acc.Type)) {
                 recordTypeId = ContractHelper.getRecordTypeId(acc.Type);
             }
             
