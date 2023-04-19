@@ -9,7 +9,7 @@ public with sharing class AccountHelper {
             contr.AccountId = acc.Id;
             contr.Description = String.valueOf(Label.AccountContract).replace('<Name>',acc.Name);
             
-            Id recordTypeId = ContractHelper.getRecordTypeId('Free');
+            String recordTypeId = ContractHelper.getRecordTypeId('Free');
 
             if(String.isNotEmpty(acc.Type)) {
                 recordTypeId = ContractHelper.getRecordTypeId(acc.Type);
