@@ -11,7 +11,7 @@ public with sharing class AccountHelper {
             
             Id recordTypeId = ContractHelper.getRecordTypeId('Free');
 
-            if(String.isNotEmpty(acc.Type)) {
+            if(!String.isNotEmpty(acc.Type)) {
                 recordTypeId = ContractHelper.getRecordTypeId(acc.Type);
             }
             
