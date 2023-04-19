@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccountContract</fullName>
+        <language>pt_BR</language>
+        <protected>true</protected>
+        <shortDescription>Contrato do usuário</shortDescription>
+        <value>Eu, &lt;Name&gt; concordo com seguintes termos:
+• Termo 1
+• Termo 2
+• Termo 3</value>
+    </labels>
+</CustomLabels>
