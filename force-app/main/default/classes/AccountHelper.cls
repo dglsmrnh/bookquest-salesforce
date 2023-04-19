@@ -1,6 +1,6 @@
 public with sharing class AccountHelper {
 
-    public static void createContractOnInsert(List<Account> newRecord) {
+    public static void createContractOnInsert(List<Account> newRecords) {
         List<Contract> contractList = new List<Contract>();
         
         for(Account acc : newRecords) {
@@ -9,7 +9,7 @@ public with sharing class AccountHelper {
             contr.AccountId = acc.Id;
             contr.Description = String.valueOf(Label.AccountContract).replace('<Name>',acc.Name);
             
-            String recordTypeId = ContractHelper.getRecordTypeId('Free');
+            Id recordTypeId = ContractHelper.getRecordTypeId('Free');
 
             if(String.isNotEmpty(acc.Type)) {
                 recordTypeId = ContractHelper.getRecordTypeId(acc.Type);
