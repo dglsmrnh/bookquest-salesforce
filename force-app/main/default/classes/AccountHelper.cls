@@ -22,4 +22,23 @@ public with sharing class AccountHelper {
         
         Database.insert(contractList);
     }
+
+    public static void createContactOnInsert(List<Account> newRecords) {
+        List<Contact> contactList = new LIst<Contact>();
+
+        for(Account acc : newRecords) {
+            Contact cont = new Contact();
+            if(acc.Name.contains(' ')) {
+                String[] nameVector = acc.Name.split(' ');
+                cont.FirstName = nameVector[0];
+                cont.LastName = nameVector[nameVector.size() - 1];
+            }
+            else {
+                cont.LastName = acc.Name;
+            }
+            contactList.add(cont);
+        }
+
+        Database.insert(contactList);
+    }
 }
