@@ -36,7 +36,7 @@ public with sharing class AccountHelper {
             else {
                 cont.LastName = acc.Name;
             }
-            cont.ExternalId__c = acc.Username__c; //Temporary fix for the trigger, decide what to put on next meeting
+            cont.ExternalId__c = acc.Email__c; //Temporary fix for the trigger, decide what to put on next meeting
             contactList.add(cont);
         }
 
