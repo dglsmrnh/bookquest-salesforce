@@ -9,34 +9,35 @@ public class AccountTriggerHandler extends TriggerHandler{
     return runTrigger;
   }
 
-  public static Boolean enableTrigger(){
+  public static Boolean enableTrigger() {
     return runTrigger = true;
   }
 
-  public static Boolean disableTrigger(){
+  public static Boolean disableTrigger() {
     return runTrigger = false;
   }
 
-  public override void beforeInsert(){
+  public override void beforeInsert() {
   }
 
-  public override void afterInsert(){
+  public override void afterInsert() {
     AccountHelper.createContractOnInsert((Account[])newRecordList);
+    AccountHelper.createContactOnInsert((Account[])newRecordList);
   }
 
-  public override void beforeUpdate(){
-
-  }
-
-  public override void afterUpdate(){
+  public override void beforeUpdate() {
 
   }
 
-  public override void beforeDelete(){
+  public override void afterUpdate() {
 
   }
 
-  public override void afterDelete(){
+  public override void beforeDelete() {
+
+  }
+
+  public override void afterDelete() {
 
   }
 }
